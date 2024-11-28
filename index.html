@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Video y Música de Fondo</title>
+    <style>
+        /* Estilo para que el video ocupe toda la pantalla */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Contenedor del video */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: -1; /* Para que el video esté detrás del contenido */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Capa para oscurecer el video con un efecto de viñeta */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Color oscuro con transparencia */
+            pointer-events: none; /* Para que no interfiera con los clics */
+        }
+
+        /* Contenedor para el texto y el botón */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo del botón */
+        .content button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: rgba(0, 123, 255, 0.7);
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .content button:hover {
+            background-color: rgba(0, 123, 255, 1);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+            transform: scale(1.1); /* El botón se agranda al pasar el cursor */
+        }
+
+        .content button:active {
+            transform: scale(1); /* El botón vuelve a su tamaño original cuando se hace clic */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video en el fondo -->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="1127.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </div>
+
+    <!-- Capa para oscurecer el video con viñeta -->
+    <div class="video-overlay"></div>
+
+    <!-- Música de fondo -->
+    <audio autoplay loop>
+        <source src="musica.mp3" type="audio/mp3">
+        Tu navegador no soporta el formato de audio.
+    </audio>
+
+    <!-- Contenido sobre el video -->
+   <div class="content">
+    <h1>TENGO UN REGALO PARA TI :3</h1>
+    <a href="flower.html">
+        <button>INGRESAR</button>
+    </a>
+</div>
+
+
+</body>
+</html>
